@@ -10,6 +10,8 @@ body {
 	flex-direction: column;
 	align-items: center;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 10px;
+	list-style: symbols();
 }
 
 .main-title{
@@ -28,30 +30,49 @@ p{
 	margin: 2px;
 }
 
+.board{
+	border: 2px rgb(104, 11, 26) dotted;
+	width: 100vw;
+	height: 75vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
 .cards{
-	margin: 30px;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-gap: 10px;
-	grid-auto-flow: column;
-	max-width: 1300px;
+	border: medium blue solid;
+	// margin: 30px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	// justify-content: center;
+	align-content: center;
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	// display: grid;
+	// grid-template-columns: 1fr 1fr 1fr 1fr;
+	// grid-template-rows: 1fr 1fr;
+	// grid-gap: 10px;
+	// grid-auto-flow: column;
+	// max-width: 1300px;
 }
 
 
 .card{
 	border: 1.5px black solid;
-	border-radius: 10px;
-	// height: 20vh;
-	width: 20vw;
-	display: flex;
-	flex-direction: column;
+	// border-radius: 10px;
+	height: 5rem;
+	width: 3.75rem;
+	// display: flex;
+	// flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	// justify-content: center;
 	background-image: url("../images/emote_smile.png");
-	max-width: 189px;
-	min-width: 181px;
-	min-height: 189px;
+	// max-width: 189px;
+	// min-width: 181px;
+	// min-height: 189px;
 	
 }
 
@@ -65,11 +86,12 @@ p{
 .poke-img{
 	box-sizing: border-box;
 	width: 100%;
+	height: 100%;
 	background-color: blanchedalmond;
-	border: 8px rgb(51, 145, 71) solid;
+	border: 2px rgb(51, 145, 71) solid;
 	border-radius: 5px;
 	opacity: 0;
-	min-height: 189px;
+	// min-height: 189px;
 }
 .poke-name{
 	text-transform: capitalize;

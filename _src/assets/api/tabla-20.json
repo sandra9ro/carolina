@@ -1,0 +1,42 @@
+[
+  {
+    "foto": "./images/foto-01",
+    "nombre": "foto-01" 
+  },
+  {
+    "foto": "./images/foto-02",
+    "nombre": "foto-02" 
+  },
+  {
+    "foto": "./images/foto-03",
+    "nombre": "foto-03" 
+  },
+  {
+    "foto": "./images/foto-04",
+    "nombre": "foto-04" 
+  },
+  {
+    "foto": "./images/foto-05",
+    "nombre": "foto-05" 
+  },
+  {
+    "foto": "./images/foto-06",
+    "nombre": "foto-06" 
+  },
+  {
+    "foto": "./images/foto-07",
+    "nombre": "foto-07" 
+  },
+  {
+    "foto": "./images/foto-08",
+    "nombre": "foto-08" 
+  },
+  {
+    "foto": "./images/foto-09",
+    "nombre": "foto-09" 
+  },
+  {
+    "foto": "./images/foto-10",
+    "nombre": "foto-10" 
+  }
+]

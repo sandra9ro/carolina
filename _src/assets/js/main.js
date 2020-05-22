@@ -5,6 +5,11 @@ const cards = document.querySelector('.js-cards');
 const button = document.querySelector('.js-button');
 const numberOfCards = document.querySelectorAll('.js-numberOfCards');
 const card = document.querySelector('.js-card');
+
+// const table = document.querySelector('.js-table');
+console.log(tabla6);
+
+
 //Variables para crear el tablero
 let cardsList = [];
 let numberForUrl = "";
@@ -36,20 +41,20 @@ Array.prototype.shuffle = function(){
 
 
 function getServerData(){
-  fetch(`https://beta.adalab.es/ejercicios-extra/api/pokemon-cards/${numberForUrl}.json`)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      cardsList = data;      
-    })
-    .then(function(){
-      cardsList.shuffle();
-    })
+  // fetch(`https://beta.adalab.es/ejercicios-extra/api/pokemon-cards/${numberForUrl}.json`)
+  //   .then(function(response) {
+  //     return response.json();
+  //   })
+  //   .then(function(data) {
+  //     cardsList = data;      
+  //   })
+  //   .then(function(){
+  //     cardsList.shuffle();
+  //   })
 
-    .catch(function(err) {
-      console.log("Error al traer los datos del servidor", err);
-    });
+  //   .catch(function(err) {
+  //     console.log("Error al traer los datos del servidor", err);
+  //   });
 
 
   paintCards();
@@ -60,13 +65,18 @@ function getServerData(){
 
 
 function paintCards() {
+  // debugger;
   let cardsPainting = "";
   
-  for (let i = 0; i < cardsList.length; i++) {
+  for (let i = 0; i < tabla20.length; i++) {
     cardsPainting += `<li class="card"><div class="card js-card">
-    <img src="${cardsList[i].image}" alt="${cardsList[i].name}" class="poke-img">
-    </div></li>`;    
+    <img src="${tabla20[i].foto}" alt="${tabla20[i].nombre}" class="poke-img">
+    </div></li>`;   
+    // cardsPainting += `<tr><img src="${tabla20[i].foto}"  alt="${tabla20[i].nombre}"></tr>`;
   }
+  // cardsPainting += `<p>${tabla20[3].nombre}</p><img src='${tabla20[5].foto}></img>`;
+  // cardsPainting += `<p>${tabla20[3].nombre}</p><img src='./assets/images/foto06.jpg'></img>`
+
 
   cards.innerHTML = cardsPainting; 
   listenToCard()
@@ -130,7 +140,7 @@ function compareCards(){
 
 function alertWin(){
   if (winningCards === cardsList.length){
-    alert('¡¡¡  Has ganado :D  !!!');
+    // alert('¡¡¡  Has ganado :D  !!!');
     winningCards = 0;
   }
 }

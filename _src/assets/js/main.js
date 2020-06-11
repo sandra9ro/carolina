@@ -7,16 +7,18 @@ const numberOfCards = document.querySelectorAll('.js-numberOfCards');
 const card = document.querySelector('.js-card');
 
 // const table = document.querySelector('.js-table');
-console.log(tabla6);
 
 
 //Variables para crear el tablero
 let cardsList = [];
-let numberForUrl = "";
+let tableSize = [];
+let newClass = "";
+
 //Variables para jugar
 let playingCards = [];
 let winningCards = 0;
 
+console.log(tableSize);
 
 
 //   I N I C I O   /   P R E P A R A C I Ó N    D E L    J U E G O
@@ -28,20 +30,23 @@ let winningCards = 0;
 Array.prototype.shuffle = function(){
   for (var i = this.length-1; i>0;i--){
     var j = Math.floor(i * Math.random());
-    var tmp = this[j];
+    var x = this[j];
     this [j] = this[i];
-    this[i] = tmp;
+    this[i] = x;
   }
   return this;
 }
 
+function shuffleCards(){
+  tableSize.shuffle();
+}
 
 // Get data from server
 // Llamada al servidor para traer los pokemon, también ordena la lista aleatoriamente
 
 
 function getServerData(){
-  // fetch(`https://beta.adalab.es/ejercicios-extra/api/pokemon-cards/${numberForUrl}.json`)
+  // fetch(`https://beta.adalab.es/ejercicios-extra/api/pokemon-cards/${tableSize}.json`)
   //   .then(function(response) {
   //     return response.json();
   //   })
@@ -65,15 +70,17 @@ function getServerData(){
 
 
 function paintCards() {
-  // debugger;
+    // debugger;
   let cardsPainting = "";
-  
-  for (let i = 0; i < tabla20.length; i++) {
-    cardsPainting += `<li class="card"><div class="card js-card">
-    <img src="${tabla20[i].foto}" alt="${tabla20[i].nombre}" class="poke-img">
-    </div></li>`;   
+
+  cardsPainting += `<ul class="cards ${newClass}">`;
+  for (let i = 0; i < tableSize.length; i++) {
+    cardsPainting += `<li class="card"><div class="img-container js-card">
+    <img src="${tableSize[i].foto}" alt="${tableSize[i].nombre}" class="poke-img">
+    </div></li>`;
     // cardsPainting += `<tr><img src="${tabla20[i].foto}"  alt="${tabla20[i].nombre}"></tr>`;
   }
+  cardsPainting += '</ul>';
   // cardsPainting += `<p>${tabla20[3].nombre}</p><img src='${tabla20[5].foto}></img>`;
   // cardsPainting += `<p>${tabla20[3].nombre}</p><img src='./assets/images/foto06.jpg'></img>`
 
@@ -88,17 +95,22 @@ function paintCards() {
 function handleButton() {
   winningCards = 0;
   DetectCheckedOption();
-  getServerData();
+  // getServerData();
 }
 
 
 function DetectCheckedOption(){
-
+// debugger
   for(let i=0; i< numberOfCards.length; i++){
     if (numberOfCards[i].checked === true){
-      numberForUrl = numberOfCards[i].value;
+      tableSize = eval(numberOfCards[i].value);
+      newClass = numberOfCards[i].value;
+      console.log(tableSize);
+      
     }    
   }
+  shuffleCards();
+  paintCards();
 }
 
 function listenToButtton() {
@@ -171,4 +183,4 @@ function listenToCard(){
 }
 
 listenToButtton();
-DetectCheckedOption();
+// DetectCheckedOption();

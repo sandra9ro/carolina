@@ -1,5 +1,5 @@
 'use strict';
-const tabla20 =[
+const table20 =[
   {
     "foto": "./assets/images/foto-01.jpg",
     "nombre": "foto-01" 
@@ -86,7 +86,7 @@ const tabla20 =[
 ];
 
 
-const tabla12 = [
+const table12 = [
   {
     "foto": "./assets/images/foto-05.jpg",
     "nombre": "foto-05" 
@@ -141,7 +141,7 @@ const tabla12 = [
 
 
 
-const tabla6 =[
+const table6 =[
   {
     "foto": "./assets/images/foto-01.jpg",
     "nombre": "foto-01" 

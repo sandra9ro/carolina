@@ -92,7 +92,12 @@ gulp.task('images', function(done) {
 
 // >> Copy api files
 gulp.task('api', function(done) {
-  gulp.src(config.api.src).pipe(gulp.dest(config.api.dest));
+  gulp
+  .src(config.api.src)
+  .pipe(
+    plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
+  )
+  .pipe(gulp.dest(config.api.dest));
   done();
 });
 
@@ -167,7 +172,7 @@ gulp.task('scripts-dist', function(done) {
   done();
 });
 
-// >> Copy image files
+// >> Copy api files
 gulp.task('api-dist', function(done) {
   gulp.src(config.api.src).pipe(gulp.dest(config.api.dist));
   done();

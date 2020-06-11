@@ -62,15 +62,24 @@ body {
 	display: grid;
 }
 .table6{
-	height: 85vw;
+	height: 180vw;
 	width: 90vw;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+
 	grid-gap: 2vw;
-	margin: -30vw 0 0 0;
+	// margin: -30vw 0 0 0;
 	// margin-top: 50vw;
 	// grid-auto-flow: column;
 	border: 3px dotted rgb(226, 20, 233);
+
+	// @media all and (min-width: 678px){
+	// 	height: 85vw;
+	// 	width: 90vw;	
+	// 	grid-template-columns: 1fr 1fr 1fr;
+	// 	grid-template-rows: 1fr 1fr;
+
+	// }
 }
 
 .table12{

@@ -10,7 +10,7 @@ const card = document.querySelector('.js-card');
 
 
 //Variables para crear el tablero
-let cardsList = [];
+// let cardsList = [];
 let tableSize = [];
 let newClass = "";
 
@@ -18,7 +18,7 @@ let newClass = "";
 let playingCards = [];
 let winningCards = 0;
 
-console.log(tableSize);
+// console.log(tableSize);
 
 
 //   I N I C I O   /   P R E P A R A C I Ó N    D E L    J U E G O
@@ -41,32 +41,8 @@ function shuffleCards(){
   tableSize.shuffle();
 }
 
-// Get data from server
-// Llamada al servidor para traer los pokemon, también ordena la lista aleatoriamente
-
-
-function getServerData(){
-  // fetch(`https://beta.adalab.es/ejercicios-extra/api/pokemon-cards/${tableSize}.json`)
-  //   .then(function(response) {
-  //     return response.json();
-  //   })
-  //   .then(function(data) {
-  //     cardsList = data;      
-  //   })
-  //   .then(function(){
-  //     cardsList.shuffle();
-  //   })
-
-  //   .catch(function(err) {
-  //     console.log("Error al traer los datos del servidor", err);
-  //   });
-
-
-  paintCards();
-  listenToButtton();
-}
-
 // Painting the cards
+// Bucle que pinta la lista de imágenes que se haya seleccionado
 
 
 function paintCards() {
@@ -78,12 +54,8 @@ function paintCards() {
     cardsPainting += `<li class="card"><div class="img-container js-card">
     <img src="${tableSize[i].foto}" alt="${tableSize[i].nombre}" class="poke-img">
     </div></li>`;
-    // cardsPainting += `<tr><img src="${tabla20[i].foto}"  alt="${tabla20[i].nombre}"></tr>`;
   }
   cardsPainting += '</ul>';
-  // cardsPainting += `<p>${tabla20[3].nombre}</p><img src='${tabla20[5].foto}></img>`;
-  // cardsPainting += `<p>${tabla20[3].nombre}</p><img src='./assets/images/foto06.jpg'></img>`
-
 
   cards.innerHTML = cardsPainting; 
   listenToCard()
@@ -105,7 +77,7 @@ function DetectCheckedOption(){
     if (numberOfCards[i].checked === true){
       tableSize = eval(numberOfCards[i].value);
       newClass = numberOfCards[i].value;
-      console.log(tableSize);
+      // console.log(tableSize);
       
     }    
   }
@@ -123,8 +95,6 @@ function listenToButtton() {
 
 //   D U R A N T E       E L       J U E G O
 
-
-// console.log(playingCards);
 
 
 function openCards(ev) {
@@ -151,8 +121,8 @@ function compareCards(){
 }
 
 function alertWin(){
-  if (winningCards === cardsList.length){
-    // alert('¡¡¡  Has ganado :D  !!!');
+  if (winningCards === tableSize.length){
+    alert(`¡¡¡ Felicidades, has ganado :D !!!`);
     winningCards = 0;
   }
 }
@@ -161,12 +131,8 @@ function alertWin(){
 //Función para que las cartas sólo sean escuchadas cuando están cerradas
 function isClosed(ev){
   if(ev.target.classList.contains("open") === false){
-    // console.log('no la tiene');    
     openCards(ev);
     compareCards(ev);
-  
-  // }else{
-  //   console.log('sí la tiene');    
   }
 }
 

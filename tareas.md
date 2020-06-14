@@ -1,10 +1,12 @@
 Tareas pendientes para terminar de hacer el juego:
 
-- [] Ajustar la maqueta a responsive
+- [x] Ajustar la maqueta a responsive
   - [x] Versión móvil
+  - [x] 677 - 480 px
   - [x] Tablet
-  - [] Ordenador
+  - [x] Ordenador
 - [] Cambiar fotos para equilibrarlas
 - [] Poner mensaje de final del juego
 - [] Añadir contador de intentos o de tiempo
 - [] Cambiar nombres de clases poke
+- [] Limpiar

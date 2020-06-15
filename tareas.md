@@ -6,7 +6,7 @@ Tareas pendientes para terminar de hacer el juego:
   - [x] Tablet
   - [x] Ordenador
 - [] Cambiar fotos para equilibrarlas
-- [] Poner mensaje de final del juego
+- [x] Poner mensaje de final del juego
 - [] Añadir contador de intentos o de tiempo
-- [] Cambiar nombres de clases poke
+- [x] Cambiar nombres de clases poke
 - [] Limpiar

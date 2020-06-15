@@ -6,8 +6,6 @@ const button = document.querySelector('.js-button');
 const numberOfCards = document.querySelectorAll('.js-numberOfCards');
 const card = document.querySelector('.js-card');
 
-// const table = document.querySelector('.js-table');
-
 
 //Variables para crear el tablero
 // let cardsList = [];
@@ -18,7 +16,6 @@ let newClass = "";
 let playingCards = [];
 let winningCards = 0;
 
-// console.log(tableSize);
 
 
 //   I N I C I O   /   P R E P A R A C I Ó N    D E L    J U E G O
@@ -46,13 +43,12 @@ function shuffleCards(){
 
 
 function paintCards() {
-    // debugger;
   let cardsPainting = "";
 
   cardsPainting += `<ul class="cards ${newClass}">`;
   for (let i = 0; i < tableSize.length; i++) {
     cardsPainting += `<li class="card"><div class="img-container js-card">
-    <img src="${tableSize[i].foto}" alt="${tableSize[i].nombre}" class="poke-img">
+    <img src="${tableSize[i].foto}" alt="${tableSize[i].nombre}" class="card-img">
     </div></li>`;
   }
   cardsPainting += '</ul>';
@@ -72,13 +68,10 @@ function handleButton() {
 
 
 function DetectCheckedOption(){
-// debugger
   for(let i=0; i< numberOfCards.length; i++){
     if (numberOfCards[i].checked === true){
       tableSize = eval(numberOfCards[i].value);
       newClass = numberOfCards[i].value;
-      // console.log(tableSize);
-      
     }    
   }
   shuffleCards();
@@ -120,6 +113,7 @@ function compareCards(){
   listenToCard();
 }
 
+
 function alertWin(){
   if (winningCards === tableSize.length){
     alert(`¡¡¡ Felicidades, has ganado :D !!!`);
@@ -139,9 +133,7 @@ function isClosed(ev){
 
 function play(ev){
   isClosed(ev);
-  // openCards(ev);
-  // compareCards(ev);
-    alertWin();
+  alertWin();
 }
 
 function listenToCard(){
@@ -149,4 +141,3 @@ function listenToCard(){
 }
 
 listenToButtton();
-// DetectCheckedOption();

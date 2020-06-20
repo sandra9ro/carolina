@@ -116,7 +116,7 @@ function compareCards(){
 
 function alertWin(){
   if (winningCards === tableSize.length){
-    alert(`¡¡¡ Felicidades, has ganado :D !!!`);
+    // alert(`¡¡¡ Felicidades, has ganado :D !!!`);
     winningCards = 0;
   }
 }

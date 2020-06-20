@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Emparejando</title>
+        <link rel="icon" href="./smile.png" />
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Sacramento&family=Satisfy&display=swap"
+        rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&family=Satisfy&display=swap"
+        rel="stylesheet">
+    </head>
+    
+    <body>
+        <header class="header">
+             <h1 class="main-title">El juego de Carolina</h1>
+
+            <p class="instructions">¿Con cuántas cartas quieres jugar?</p>
+            <p class="instructions">Dale a comenzar y... ¡empieza a memorizar!</p>
+        </header>
+        <form class="form" name="form">
+            <label for="six">6</label>
+            <input type="radio" id="six" class="js-numberOfCards cartas"
+            name="cardsNumber" value="table6" />
+            <label for="twelve">12</label>
+            <input type="radio" id="twelve" class="js-numberOfCards cartas"
+            name="cardsNumber" value="table12" checked />
+            <label for="twenty">20</label>
+            <input type="radio" id="twenty" class="js-numberOfCards cartas"
+            name="cardsNumber" value="table20" />
+            <input type="button" value="Comenzar" class="button js-button" />
+        </form>
+        <main class="board js-cards"></main>
+        <script src="./assets/js/main.js"></script>
+    </body>
+
+</html>
